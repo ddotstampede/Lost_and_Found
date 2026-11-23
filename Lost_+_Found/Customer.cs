@@ -1,52 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Http.Headers;
 using System.Text;
+using System.Xml.Linq;
 
 namespace Lost___Found
 {
-    public class Customer
+    public class Customer : Person
     {
         //Todo variablen erweitern 
 
-        private string name;
-        private string email;
-        private string phonenumber;
-        private string adresse;
+        
+        private string Email { get; set; }
+        private string Phonenumber { get; set; }
+        private string Adresse { get; set; }    
         
        
 
-        public Customer(string name, string email, string phonenumber, string adresse)
+        public Customer( string name, int age ,string email, string phonenumber, string adresse) : base(name, age)
         {
-            Name = name;
+            
             Email = email;
             Phonenumber = phonenumber;
             Adresse = adresse;
         }
-        public string Name 
-        {
-            get { return name; }
-            set { name = value; }
-        } 
-        public string Email
-        {
-            get { return email; }
-            set {  email = value; }
 
-        }
-        public string Phonenumber
-        {
-            get { return phonenumber; }
-            set { phonenumber = value; }
-        }
-        public string Adresse
-        {
-            get{ return adresse; }
-            set{ adresse = value; }
-        }
+
         //Todo methode ausarbeiten
-        public void AddCustomer()
-        {
-            
+        public virtual string GetInfo()
+        {   
+            string baseInfo = base.GetInfo();
+            return $"{baseInfo} , Email: {Email}, Telefonnummer: {Phonenumber}, Adresse: {Adresse}";
         }
     }
 }

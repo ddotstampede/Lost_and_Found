@@ -4,28 +4,30 @@ using System.Text;
 
 namespace Lost___Found
 {
-    public class ticket
-    {
+    public class Ticket
+    {   
 
-        private int id;
-        private string name;
-        private string description;
+        private static int TicketCounter = 1;
+        private int Ticketid { get; set; }
+        private string Name { get; set; }
+        private string Description { get; set; }
+        private DateTime DateTime { get; set; } = DateTime.Now;
+        private bool IsOpen { get; set; }
 
-        public ticket(int id, string name, string description)
+        public Ticket( string name, string description, bool isOpen)
         {
-            Id = id;
+            Ticketid = TicketCounter++;
             Name = name;
             Description = description;
+            IsOpen = isOpen;
 
         }
 
-        public string Name { get { return name; } set { name = value; } }
-        public string Description { get { return description; } set { description = value; } }
-        public int Id { get { return id; } set { id = value; } }
+        
         //Todo methode ausarbeiten
-        public void OpenTicket()
+        public static Ticket  OpenTicket( string name, string description)
         {
-
+           return new Ticket(name, description, true );
         }
     
 

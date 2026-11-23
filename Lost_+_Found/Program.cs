@@ -1,21 +1,11 @@
 ﻿namespace Lost___Found
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            /* TODO
-             Datenbank struktur überlegen 
-             klassen anlegen für :
-             gefunde gegenstände
-             Mitarbeiter 
-             
-            dokumentation starten
-            erste markdown datei erstellen 
-             
-             
-             
-             */
+           Customer customer = new Customer("john doe",19,"john.doe@example.com","123-456-7890","teststreet 123");
+           Console.WriteLine(customer.GetInfo());
         }
     }
 }
