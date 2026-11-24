@@ -10,12 +10,13 @@ namespace Lost___Found
     {
         //Todo variablen erweitern 
 
-        
-        private string Email { get; set; }
-        private string Phonenumber { get; set; }
-        private string Adresse { get; set; }    
-        
-       
+
+        public string Email { get; private set; }
+        public string Phonenumber { get; private set; }
+        public string Adresse { get; private set; }
+        public List<Ticket> tickets { get; private set; } = new List<Ticket>();
+
+
 
         public Customer( string name, int age ,string email, string phonenumber, string adresse) : base(name, age)
         {
@@ -27,10 +28,19 @@ namespace Lost___Found
 
 
         //Todo methode ausarbeiten
+
+        public Ticket OpenTicket(string type, string description)
+        {
+            Ticket neuesTicket = new Ticket(type, description, true, this, DateTime.Now);
+            tickets.Add(neuesTicket);
+            return neuesTicket;
+        }
+
         public virtual string GetInfo()
         {   
             string baseInfo = base.GetInfo();
             return $"{baseInfo} , Email: {Email}, Telefonnummer: {Phonenumber}, Adresse: {Adresse}";
         }
+
     }
 }

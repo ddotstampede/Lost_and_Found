@@ -5,30 +5,30 @@ using System.Text;
 namespace Lost___Found
 {
     public class Ticket
-    {   
+    {
 
-        private static int TicketCounter = 1;
-        private int Ticketid { get; set; }
-        private string Name { get; set; }
-        private string Description { get; set; }
-        private DateTime DateTime { get; set; } = DateTime.Now;
-        private bool IsOpen { get; set; }
+        public static int TicketCounter = 1;
+        public int Ticketid { get; private set; }
+        public string Type { get; private set; }
+        public string Description { get; private set; }
+        public Customer Creator { get; private set; }
+        public DateTime DateTime { get; private set; } = DateTime.Now;
+        public bool IsOpen { get; private set ; }
 
-        public Ticket( string name, string description, bool isOpen)
+        public Ticket( string name, string description, bool isOpen, Customer creator, DateTime dateTime)
         {
             Ticketid = TicketCounter++;
-            Name = name;
+            Type = name;
             Description = description;
             IsOpen = isOpen;
+            Creator = creator;
+            DateTime = DateTime.Now;
 
         }
 
         
         //Todo methode ausarbeiten
-        public static Ticket  OpenTicket( string name, string description)
-        {
-           return new Ticket(name, description, true );
-        }
+       
     
 
 

@@ -6,14 +6,14 @@ namespace Lost___Found
 {
     public abstract class Person
     {
-        protected Person(string name, int age)
+        public Person(string name, int age)
         {
             Name = name;
             Age = age;
         }
 
-        private string Name { get; set; }
-        private int Age { get; set; }
+        public string Name { get; private set; }
+        public int Age { get; private set; }
 
 
         public virtual string GetInfo()
