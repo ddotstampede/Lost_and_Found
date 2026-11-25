@@ -27,16 +27,14 @@ namespace Lost___Found
         }
 
 
-        //Todo methode ausarbeiten
-
-        public Ticket OpenTicket(string type, string description)
+        public Ticket OpenTicket()
         {
-            Ticket neuesTicket = new Ticket(type, description, true, this, DateTime.Now);
+            Ticket neuesTicket = Ticket.CreateFromInput(this);
             tickets.Add(neuesTicket);
             return neuesTicket;
         }
 
-        public virtual string GetInfo()
+        public override string GetInfo()
         {   
             string baseInfo = base.GetInfo();
             return $"{baseInfo} , Email: {Email}, Telefonnummer: {Phonenumber}, Adresse: {Adresse}";

@@ -26,12 +26,26 @@ namespace Lost___Found
 
         }
 
-        
-        //Todo methode ausarbeiten
+
+        // neues ticket erstellen und daten vom kunden abfragen
+        public static Ticket CreateFromInput(Customer creator)
+        {
+            Console.Write("Ticket-Typ eingeben (z. B. Bug, Support): ");
+            string type = Console.ReadLine() ?? "Allgemein";
+
+            Console.Write("Beschreibung eingeben: ");
+            string description = Console.ReadLine() ?? "";
+
+            Console.Write("Ist das Ticket offen? (j/n): ");
+            string inputOpen = Console.ReadLine()?.Trim().ToLower() ?? "j";
+            bool isOpen = inputOpen == "j" || inputOpen == "ja";
+
+            return new Ticket(type, description, isOpen, creator, DateTime.Now);
+        }
        
-    
-
-
-}
-   
+        public void Close()
+        {
+            IsOpen = false;
+        }
+    }
 }

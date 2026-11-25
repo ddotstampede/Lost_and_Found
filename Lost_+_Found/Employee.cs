@@ -30,7 +30,7 @@ namespace Lost___Found
         {
             if (ticket.IsOpen)
             {
-                ticket.IsOpen = false;
+                ticket.Close();
                 Console.WriteLine($"Ticket #{ticket.Ticketid} has been closed.");
             }
             else
@@ -43,18 +43,32 @@ namespace Lost___Found
             Console.WriteLine($"Sending email to {customer.Email}...");
             Console.WriteLine($"Subject: {subject}");
             Console.WriteLine($"Body: {body}");
-            // Here you can implement the actual email sending logic.
+            
         }
-        public void notifyCustomer(Ticket ticket)
+        public void notifyCustomer(Ticket ticket, Item item)
         {
-            if (ticket.Type == Item.Type)
+            if (ticket == null || item == null)
+            {
+                Console.WriteLine("Ticket or item cannot be null.");
+                return;
+            }
+
+            if (!ticket.IsOpen)
+            {
+                Console.WriteLine($"Ticket #{ticket.Ticketid} is closed. No notification sent.");
+                return;
+            }
+
+            if (string.Equals(ticket.Type, item.Type, StringComparison.OrdinalIgnoreCase))
             {
                 Console.WriteLine($"Notifying {ticket.Creator.Name} about Ticket #{ticket.Ticketid}.");
-                // Here you can implement the actual notification logic, e.g., sending an email.
+                string subject = $"Matching item found for Ticket #{ticket.Ticketid}";
+                string body = $"Hello {ticket.Creator.Name}, a matching item ({item.Type} - {item.Description}) has been found for your ticket #{ticket.Ticketid}.";
+                sendingemail(ticket.Creator, subject, body);
             }
             else
             {
-                Console.WriteLine($"Ticket #{ticket.Ticketid} is closed. No notification sent.");
+                Console.WriteLine($"Item '{item.Type}' does not match Ticket #{ticket.Ticketid} ('{ticket.Type}'). No notification sent.");
             }
         }
     }
