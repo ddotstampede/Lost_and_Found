@@ -16,10 +16,36 @@ namespace Lost___Found
             EmployeeID = employeeID;
         }
 
-        public void AddCustomer()
+        public Customer AddCustomer(List<Customer> customers)
         {
+            Console.Write("Name des Kunden eingeben: ");
+            string name = Console.ReadLine()?.Trim() ?? "";
 
+            int age;
+            while (true)
+            {
+                Console.Write("Alter des Kunden eingeben: ");
+                if (int.TryParse(Console.ReadLine(), out age) && age >= 0)
+                {
+                    break;
+                }
+                Console.WriteLine("Ungültige Eingabe. Bitte eine gültige Zahl für das Alter eingeben.");
+            }
 
+            Console.Write("E-Mail eingeben: ");
+            string email = Console.ReadLine()?.Trim() ?? "";
+
+            Console.Write("Telefonnummer eingeben: ");
+            string phonenumber = Console.ReadLine()?.Trim() ?? "";
+
+            Console.Write("Adresse eingeben: ");
+            string adresse = Console.ReadLine()?.Trim() ?? "";
+
+            Customer newCustomer = new Customer(name, age, email, phonenumber, adresse);
+            customers?.Add(newCustomer);
+
+            Console.WriteLine($"Kunde '{newCustomer.Name}' wurde erfolgreich angelegt.");
+            return newCustomer;
         }
         public override string GetInfo()
         {

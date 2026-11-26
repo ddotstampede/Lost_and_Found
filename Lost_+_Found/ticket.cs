@@ -30,7 +30,7 @@ namespace Lost___Found
         // neues ticket erstellen und daten vom kunden abfragen
         public static Ticket CreateFromInput(Customer creator)
         {
-            Console.Write("Ticket-Typ eingeben (z. B. Bug, Support): ");
+            Console.Write("Ticket-Typ eingeben : ");
             string type = Console.ReadLine() ?? "Allgemein";
 
             Console.Write("Beschreibung eingeben: ");
