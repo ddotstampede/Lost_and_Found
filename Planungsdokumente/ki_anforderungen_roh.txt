@@ -1,0 +1,22 @@
+ich brauche 10 funktionale anforderungen für ein fundbüro das ich programmieren soll
+
+
+Fundsachen erfassen: Das System muss es Mitarbeitenden ermöglichen, abgegebene Gegenstände mit Kategorie, detaillierter Beschreibung, Fundort, Funddatum, Foto-Upload und optionalen Kontaktdaten des Finders zu registrieren.
+
+Verlustmeldungen anlegen: Das System muss die Erfassung von Verlustmeldungen (über ein öffentliches Online-Formular oder durch Mitarbeitende vor Ort) inklusive Gegenstandsbeschreibung, vermutetem Verlustort, Verlustzeitraum und Kontaktdaten erlauben.
+
+Automatisierter Abgleich (Matching): Das System muss neu erfasste Fundsachen automatisch anhand von Kategorie, Schlagwörtern, Ort und Datum mit offenen Verlustmeldungen abgleichen und mögliche Treffer vorschlagen.
+
+Such- und Filterfunktion: Das System muss eine Volltextsuche sowie Filter nach Kategorie, Zeitraum, Fundort und Status bereitstellen – mit voller Detailansicht für Mitarbeitende und einer datenschutzkonformen, reduzierten Ansicht für eine öffentliche Online-Suche.
+
+Statusverwaltung: Das System muss den gesamten Lebenszyklus jeder Fundsache über eindeutige Status abbilden (z. B. eingelagert, zur Abholung reserviert, an Eigentümer ausgegeben, an Finder übergeben, versteigert/entsorgt).
+
+Lagerplatzverwaltung: Das System muss jeder eingelagerten Fundsache einen physischen Lagerort (z. B. Regal, Fach oder Tresor für Wertsachen) zuweisen und dessen aktuelle Belegung anzeigen können.
+
+Ausgabe und Eigentumsnachweis: Das System muss bei der Abholung die Prüfung des Eigentumsnachweises protokollieren, die Identitätsdaten des Abholers dokumentieren und den Fall abschließen.
+
+Fristenüberwachung: Das System muss die gesetzliche Aufbewahrungsfrist (in Deutschland regulär 6 Monate ab Fundanzeige) automatisch berechnen und Mitarbeitende benachrichtigen, sobald Fristen ablaufen.
+
+Verwaltung von Finderansprüchen: Das System muss festhalten, ob der Finder Anspruch auf Finderlohn oder Eigentumserwerb nach Ablauf der Aufbewahrungsfrist erhebt, und bei Fristablauf automatisch eine Benachrichtigung an den Finder auslösen.
+
+Beleg- und Quittungserstellung: Das System muss bei der Abgabe einer Fundsache eine Fundbescheinigung für den Finder sowie bei der Herausgabe eine Abholquittung im PDF-Format generieren.

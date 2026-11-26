@@ -1,0 +1,19 @@
+Fundsachen erfassen
+diese Anforderung ist fundamental für das Programm .
+Fundort, Funddatum, Foto-Upload und optionalen Kontaktdaten des Finders zu registrieren. ich hab diese Funktionen ausgelassen weil ich den Fundort oder das Datum unnötig finde für ein Foto Upload fehlt mir das nötige wissen und zeit um es zu recherchieren wie ich so eine Funktion anlegen könnte.(4 stunden)
+
+
+Verlustmeldungen anlegen
+ebenfalls  fundamental für das Programm.
+Verlustort, Verlustzeitraum, Online-Formular weil ich den Verlust Ort oder Zeitraum auch nicht als besonders wichtig empfinde. Online Formular scheint mir auch nicht sehr sinnvoll ohne funktionierende Webseite(4 stunden)
+
+Automatisierter Abgleich (Matching)
+diese Funktion hab ich eingefügt weil sie am meisten sinn macht (8 stunden)
+
+
+Statusverwaltung
+Tickets werden geöffnet oder geschlossen(3 stunden)
+
+
+Ausgabe und Eigentumsnachweis (4 stunden)
+item werden mit Tickets verglichen und das ticket wird geschlossen 

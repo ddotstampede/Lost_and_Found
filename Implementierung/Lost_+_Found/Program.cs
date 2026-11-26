@@ -49,7 +49,12 @@
                             employees.Add(Employee.CreateFromInput());
                             break;
                         case "3":
-                            tickets.Add(customers[^1].OpenTicket());
+                                if (customers.Count == 0)
+                        {
+                            Console.WriteLine("Es sind keine Kunden vorhanden. Bitte zuerst einen Kunden anlegen.");
+                             break;
+                        }
+                        tickets.Add(customers[^1].OpenTicket());
                             break;
                         case "4":
                             Item neuesItem = Item.CreateFromInput();
@@ -78,8 +83,12 @@
                             }
                             break;
                         case "6":
-                           
-                            employees[0].CloseTicket(tickets[^1]);
+                        if (employees.Count == 0||tickets.Count == 0)
+                        {
+                            Console.WriteLine("Es sind keine Kunden vorhanden. Bitte zuerst einen Kunden anlegen.");
+                            break;
+                        }
+                        employees[0].CloseTicket(tickets[^1]);
                             break;
                         case "7":
                             showsaveddata();
