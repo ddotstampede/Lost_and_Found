@@ -17,6 +17,13 @@
             {
                 bool running = true;
 
+                Console.WriteLine("Willkommen im Lost & Found System.");
+                Console.WriteLine("Hier können Kunden, Mitarbeiter, Verlust-Tickets und Fundstücke verwaltet und abgeglichen werden. Steuerung per Zahl (0-7).");
+               customers = Customer.LoadFromFile();
+                employees = Employee.LoadFromFile();
+               items = Item.LoadFromFile();
+                tickets = Ticket.LoadFromFile(customers);
+
                 while (running)
                 {
                     Console.WriteLine("\n=== Lost & Found ===");
@@ -36,20 +43,39 @@
                 switch (auswahl)
                     {
                         case "1":
-                            customers.Add(new Customer("Geralt", 55, "geralt@rivia.com", "1048596", "kovstrasse 576"));
+                            Employee.AddCustomer(customers);
                             break;
                         case "2":
-                            employees.Add(new Employee("roche", 21, "1"));
+                            employees.Add(Employee.CreateFromInput());
                             break;
                         case "3":
                             tickets.Add(customers[^1].OpenTicket());
                             break;
                         case "4":
-                            items.Add(new Item("Schlüssel", "Ein einzelner Schlüssel mit einem roten Schlüsselanhänger."));
+                            Item neuesItem = Item.CreateFromInput();
+                            items.Add(neuesItem);
+                            if (employees.Count > 0 && tickets.Count > 0)
+                            {
+                                Console.WriteLine("Starte automatischen Abgleich mit vorhandenen Tickets...");
+                                foreach (Ticket t in tickets)
+                                {
+                                    employees[0].notifyCustomer(t, neuesItem);
+                                }
+                            }
                             break;
                         case "5":
-                            
-                            employees[0].notifyCustomer(tickets[^1], items[^1]);
+                            if (employees.Count == 0 || tickets.Count == 0 || items.Count == 0)
+                            {
+                                Console.WriteLine("Für den Abgleich müssen mindestens ein Mitarbeiter, ein Ticket und ein Fundstück vorhanden sein.");
+                                break;
+                            }
+                            foreach (Ticket t in tickets)
+                            {
+                                foreach (Item i in items)
+                                {
+                                    employees[0].notifyCustomer(t, i);
+                                }
+                            }
                             break;
                         case "6":
                            

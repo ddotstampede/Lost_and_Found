@@ -40,5 +40,21 @@ namespace Lost___Found
             return $"{baseInfo} , Email: {Email}, Telefonnummer: {Phonenumber}, Adresse: {Adresse}";
         }
 
+       public static List<Customer> LoadFromFile(string pfad = "customers.txt")
+       {
+          List<Customer> liste = new List<Customer>();
+           if (!File.Exists(pfad)) return liste;
+
+           foreach (string zeile in File.ReadAllLines(pfad))
+           {
+             string[] teile = zeile.Split(';');
+              if (teile.Length >= 5 && int.TryParse(teile[1], out int age))
+              {
+                 liste.Add(new Customer(teile[0], age, teile[2], teile[3], teile[4]));
+              }
+           }
+            return liste;
+       }
+
     }
 }
