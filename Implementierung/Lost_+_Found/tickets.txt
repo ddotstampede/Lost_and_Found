@@ -1,0 +1,6 @@
+Schlüssel;Haustürschlüssel auf dem Parkplatz verloren;false;0
+Geldbörse;Schwarze Geldbörse im Zug liegen gelassen;true;1
+Handy;Blaues Smartphone im Cafe vergessen;true;2
+Rucksack;Grauer Rucksack an der Bushaltestelle vergessen;true;3
+Regenschirm;Schwarzer Regenschirm im Eingangsbereich verloren;true;4
+

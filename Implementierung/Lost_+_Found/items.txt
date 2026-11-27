@@ -1,0 +1,6 @@
+Schlüssel;Einzelner Schlüssel mit rotem Anhänger
+Geldbörse;Schwarze Ledergeldbörse
+Handy;Blaues Smartphone mit Hülle
+Rucksack;Grauer Wanderrucksack
+Brille;Lesebrille im braunen Etui
+

@@ -1,0 +1,6 @@
+Geralt;55;geralt@rivia.com;0171-1048596;Kovstrasse 576
+Tav Balge;19;Tbalge@faerun.com;0151-1234567;Teststreet 123
+Bruce Wayne;32;Bwayne@gotham.de;0176-8844221;Lindenweg 14
+Okabe Rintarou;41;Hkyouma@stgate.de;0160-9922334;Bahnhofstrasse 8
+Klein Moretti;27;Thefool@Tarclub.de;0172-5566778;Marktplatz 3
+
